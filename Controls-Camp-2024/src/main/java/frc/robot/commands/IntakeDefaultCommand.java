@@ -18,11 +18,8 @@ public class IntakeDefaultCommand extends Command {
 
     @Override
     public void execute() {
-        if (m_intakeSubsystem.hasNote() && !m_intakeSubsystem.isNoteReady()) {
-            m_intakeSubsystem.smartIntake();
-        } else {
-            m_intakeSubsystem.defaultIntake();
-        }
+            m_intakeSubsystem.runIntake();
+
     }
 
     @Override

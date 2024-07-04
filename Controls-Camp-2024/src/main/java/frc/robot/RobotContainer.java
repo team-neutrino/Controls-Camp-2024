@@ -5,14 +5,6 @@
 package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
-import frc.robot.commands.SwerveDefaultCommand;
-import frc.robot.commands.GamePieceCommands.ArmManualCommand;
-import frc.robot.commands.GamePieceCommands.IntakeCommand;
-import frc.robot.commands.GamePieceCommands.IntakeReverseCommand;
-import frc.robot.commands.GamePieceCommands.MagicAmpChargeCommand;
-import frc.robot.commands.GamePieceCommands.MagicShootCommand;
-import frc.robot.commands.GamePieceCommands.ShootManualCommand;
-import frc.robot.commands.ArmDefaultCommand;
 import frc.robot.commands.IntakeDefaultCommand;
 import frc.robot.commands.LEDDefaultCommand;
 import frc.robot.commands.ShooterDefaultCommand;
@@ -44,37 +36,9 @@ public class RobotContainer {
   private void configureBindings() {
     // set default commands
     SubsystemContainer.LEDSubsystem.setDefaultCommand(m_LEDDefaultCommand);
-    SubsystemContainer.swerveSubsystem.setDefaultCommand(new SwerveDefaultCommand(m_driverController));
     SubsystemContainer.intakeSubsystem.setDefaultCommand(m_intakeDefaultCommand);
-    SubsystemContainer.armSubsystem.setDefaultCommand(new ArmDefaultCommand());
     SubsystemContainer.shooterSubsystem.setDefaultCommand(new ShooterDefaultCommand());
 
-    // Intake buttons
-    m_driverController.leftBumper().whileTrue(new IntakeReverseCommand());
-    m_driverController.leftTrigger().whileTrue(new IntakeCommand());
-
-    // swerve buttons
-    m_driverController.back().onTrue(new InstantCommand(() -> SubsystemContainer.swerveSubsystem.resetNavX()));
-
-    // m_driverController.b().onTrue(new InstantCommand(() -> {
-    // SubsystemContainer.swerveSubsystem.ResetModules();
-    // SubsystemContainer.armSubsystem.initializeMotorControllers();
-    // }));
-
-    // shooter buttons
-    m_buttonsController.a()
-        .whileTrue(new SequentialCommandGroup(new MagicAmpChargeCommand(m_buttonsController), new MagicShootCommand()));
-
-    m_buttonsController.x().whileTrue(new SequentialCommandGroup(
-        new ShootManualCommand(Constants.ArmConstants.SUBWOOFER_ANGLE, Constants.ShooterSpeeds.SHOOTING_SPEED,
-            Constants.ShooterSpeeds.LOW_SPEED_THRESHOLD, m_buttonsController),
-        new MagicShootCommand()));
-
-    m_buttonsController.povDown()
-        .onTrue(new InstantCommand(() -> SubsystemContainer.armSubsystem.initializeMotorControllers()));
-
-    // arm buttons
-    m_buttonsController.leftStick().toggleOnTrue(new ArmManualCommand(m_buttonsController));
   }
 
   public void teleopperiodic() {
