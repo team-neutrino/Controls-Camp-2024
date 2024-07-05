@@ -15,7 +15,7 @@ public class LEDSubsystem extends SubsystemBase {
     public LEDSubsystem(int p_port) {
         m_port = p_port;
         m_addressableLED = new AddressableLED(m_port);
-        m_LEDBuffer = new AddressableLEDBuffer(LEDConstants.LEDBufferLen);
+        m_LEDBuffer = new AddressableLEDBuffer();
         m_addressableLED.setLength(m_LEDBuffer.getLength());
         m_addressableLED.setData(m_LEDBuffer);
         m_addressableLED.start();
@@ -55,16 +55,6 @@ public class LEDSubsystem extends SubsystemBase {
 
     public void setToCyan() {
         setToColor(0, 255, 255);
-    }
-
-    // false = broken
-    public void sarahStrobe() {
-        double timeConst = Math.PI;
-        int r = (int) Math.round(126 * Math.cos(timeConst / 4 * timer.get()) + 126);
-        int g = (int) Math.round(126 * Math.cos(timeConst / 8 * timer.get()) + 126);
-        int b = (int) Math.round(126 * Math.sin(timeConst / 2 * timer.get()) + 126);
-        for (int i = 0; i < m_LEDBuffer.getLength(); ++i)
-            setToColor(r, g, b);
     }
 
     public void periodic() {

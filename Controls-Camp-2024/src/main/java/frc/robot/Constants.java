@@ -89,7 +89,6 @@ public final class Constants {
   }
 
   public final class LEDConstants {
-    public static final int LEDBufferLen = 140;
 
     public enum States {
       DEFAULT,
