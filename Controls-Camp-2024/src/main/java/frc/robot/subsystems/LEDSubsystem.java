@@ -29,34 +29,6 @@ public class LEDSubsystem extends SubsystemBase {
         }
     }
 
-    public void setToOrange() {
-        setToColor(235, 20, 0);
-    }
-
-    public void setToGreen() {
-        setToColor(0, 255, 0);
-    }
-
-    public void setToBlue() {
-        setToColor(0, 0, 255);
-    }
-
-    public void setToYellow() {
-        setToColor(255, 255, 0);
-    }
-
-    public void setToRed() {
-        setToColor(255, 0, 0);
-    }
-
-    public void setToPurple() {
-        setToColor(255, 0, 255);
-    }
-
-    public void setToCyan() {
-        setToColor(0, 255, 255);
-    }
-
     public void periodic() {
         m_addressableLED.setData(m_LEDBuffer);
     }

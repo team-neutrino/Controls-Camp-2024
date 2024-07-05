@@ -35,32 +35,10 @@ public class LEDDefaultCommand extends Command {
 
   @Override
   public void initialize() {
-    m_LEDSubsystem.setToOrange();
   }
 
   @Override
   public void execute() {
-    if (m_shooterSubsystem.approveShoot() && m_armSubsystem.getInPosition() && m_intakeSubsystem.isNoteReady()) {
-      m_LEDSubsystem.setToGreen();
-      if (m_armSubsystem.aboveAngle(Constants.ArmConstants.RUMBLE_THRESHOLD)) {
-        m_xboxController.setRumble(RumbleType.kBothRumble, Constants.OperatorConstants.RUMBLE_SPEED);
-      }
-    } else if (m_intakeSubsystem.isNoteReady()) {
-      m_LEDSubsystem.setToCyan();
-      m_xboxController.setRumble(RumbleType.kBothRumble, 0);
-    } else if (m_swerveSubsystem.getCommandState() == States.AUTOALIGN) {
-      m_LEDSubsystem.setToBlue();
-      m_xboxController.setRumble(RumbleType.kBothRumble, 0);
-    } else if (m_intakeSubsystem.isNoteTooFar()) {
-      m_LEDSubsystem.setToPurple();
-      m_xboxController.setRumble(RumbleType.kBothRumble, 0);
-    } else if (m_armSubsystem.getCommandState() == States.CLIMBING) {
-      m_LEDSubsystem.setToRed();
-      m_xboxController.setRumble(RumbleType.kBothRumble, 0);
-    } else {
-      m_LEDSubsystem.setToOrange();
-      m_xboxController.setRumble(RumbleType.kBothRumble, 0);
-    }
   }
 
   @Override
