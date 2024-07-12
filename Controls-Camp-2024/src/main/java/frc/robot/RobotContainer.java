@@ -4,8 +4,6 @@
 
 package frc.robot;
 
-import edu.wpi.first.wpilibj.DataLogManager;
-import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.IntakeDefaultCommand;
 import frc.robot.subsystems.IntakeSubsystem;
@@ -14,15 +12,14 @@ public class RobotContainer {
 
   CommandXboxController m_buttonsController = new CommandXboxController(0);
 
-  IntakeDefaultCommand m_intakeDefaultCommand = new IntakeDefaultCommand();
-  IntakeSubsystem m_intakeSubsystem = new IntakeSubsystem();
+  IntakeDefaultCommand m_intakeDefaultCommand;
+  IntakeSubsystem m_intakeSubsystem;
 
   public RobotContainer() {
+    m_intakeDefaultCommand = new IntakeDefaultCommand();
+    m_intakeSubsystem = new IntakeSubsystem();
+
     configureBindings();
-
-    DataLogManager.start();
-
-    DriverStation.startDataLog(DataLogManager.getLog());
   }
 
   private void configureBindings() {
