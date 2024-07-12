@@ -40,9 +40,9 @@ public class ShooterSubsystem extends SubsystemBase {
     m_shooterMotor.burnFlash();
   }
 
-  public void defaultShooter() {
-    setVoltage(SubsystemContainer.intakeSubsystem.() ? ShooterSpeeds.INITIAL_SHOOTER_SPEED : 0.0);
-  }
+  // public void defaultShooter() {
+  //   setVoltage(SubsystemContainer.intakeSubsystem.() ? ShooterSpeeds.INITIAL_SHOOTER_SPEED : 0.0);
+  // }
 
   public boolean approveShoot() {
     //return the boolean that tells you if you are at the speed you want to be at
