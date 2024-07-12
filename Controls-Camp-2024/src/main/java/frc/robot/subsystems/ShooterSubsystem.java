@@ -19,56 +19,55 @@ import edu.wpi.first.math.filter.Debouncer;
 import edu.wpi.first.math.filter.Debouncer.DebounceType;
 
 public class ShooterSubsystem extends SubsystemBase {
-  private CANSparkMax m_shooterMotor = new CANSparkMax(MotorIDs.SHOOTER_MOTOR, MotorType.kBrushless);
-  private RelativeEncoder m_shooterEncoder;
+  private CANSparkMax m_shooterMotor = //Create a motor controller for the shooter- your parameters are a CAN ID and a motor type.
+  private RelativeEncoder m_shooterEncoder; //An encoder tells you about the rotation of the motor- this is how we know what our RPM is
   private SparkPIDController m_pidController;
   private Debouncer m_shootDebouncer = new Debouncer(1.0);
 
   private ControlType m_shootControlType;
-  private double m_targetVoltage;
-  private double m_targetRPM;
+  //create a double member variable for target voltage
+  //create a double member variable for target RPM
 
-  private boolean m_atSpeed;
+  //create a boolean member variable for whether or not you are at the target speed
 
   public ShooterSubsystem() {
-    m_shooterEncoder = m_shooterMotor.getEncoder();
-    m_pidController = m_shooterMotor.getPIDController();
-    m_pidController.setFeedbackDevice(m_shooterEncoder);
-    m_shooterMotor.setIdleMode(IdleMode.kCoast);
-    m_shooterMotor.setInverted(false);
-
+    m_shooterEncoder = m_shooterMotor.//Call a "get" method for the shooter encoder
+    m_pidController = m_shooterMotor.//Call a "get" method for the PID controller
+    m_pidController.setFeedbackDevice(); //Fill the parentheses with the member variable for the encoder
+    m_shooterMotor.setIdleMode(IdleMode.); //Set the idle mode of the shooter motor to "coast"
+    m_shooterMotor.setInverted(); //Fill the parentheses with a boolean to make the shooter motor NOT inverted.
 
     m_shooterMotor.burnFlash();
   }
 
-  // public void defaultShooter() {
-  //   setVoltage(SubsystemContainer.intakeSubsystem.() ? ShooterSpeeds.INITIAL_SHOOTER_SPEED : 0.0);
-  // }
+  public void defaultShooter() {
+    setVoltage(SubsystemContainer.intakeSubsystem.() ? ShooterSpeeds.INITIAL_SHOOTER_SPEED : 0.0);
+  }
 
   public boolean approveShoot() {
-    return m_atSpeed;
+    //return the boolean that tells you if you are at the speed you want to be at
   }
 
   public boolean aboveRPM(double p_rpm) {
-    return (getShooterRPM() > p_rpm);
+    //return true if your shooter RPM is greater than the parameter value- return false otherwise.
   }
 
   public double getShooterRPM() {
-    return m_shooterEncoder.getVelocity();
+    //return the velocity of the shooter motor (hint: use the encoder!!)
   }
 
   public double getTargetRPM() {
-    return m_targetRPM;
+    //return your target RPM for the shooter motor
   }
 
-  public void setTargetRPM(double p_targetRPM) {
-    m_targetRPM = p_targetRPM;
+  public void setTargetRPM() { //create a parameter for target rpm and put it in the parentheses
+    //here, set your member variable (m_) to the value given by the parameter variable
     m_shootControlType = ControlType.kVelocity;
   }
 
   public void setVoltage(double voltage) {
-    m_targetVoltage = voltage;
-    m_shootControlType = ControlType.kVoltage;
+    //set your target voltage
+    //set your shoot control type to voltage
   }
 
   @Override
