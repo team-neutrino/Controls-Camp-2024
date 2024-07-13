@@ -1,10 +1,10 @@
-//This exercise focuses on the execute section of the command- fill in the missing methods.
+//This exercise focuses on the execute section of the command- look for more green comments for instructions
 
 package frc.robot.commands.GamePieceCommands;
 
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
-public class ShootManualCommand extends GamePieceCommand {
+public class ShootManualCommand extends CommandBase {
     private double m_angle;
     private double m_rpm;
     private double m_thresholdrpm;

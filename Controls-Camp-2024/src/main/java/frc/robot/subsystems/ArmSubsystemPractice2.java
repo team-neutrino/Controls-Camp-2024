@@ -13,7 +13,7 @@ public class ArmSubsystem extends SubsystemBase {
   public ArmSubsystem() {
     m_armMotor = ; //Hint: your parameters are MotorIDs.Arm and MotorType.kBrushless
     m_armDebouncer = ; //Hint: your parameters are ArmConstants.DEBOUNCE_TIME and DebounceType.kRising
-    m_targetAngle = ; //Pick a good number please
+    m_targetAngle = ; //Pick a reasonable number please
     m_timer = ;
   }
 

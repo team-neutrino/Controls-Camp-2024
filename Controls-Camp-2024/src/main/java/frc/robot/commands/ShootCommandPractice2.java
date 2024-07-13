@@ -2,6 +2,7 @@
 // the shooter subsystem is going faster than our threshold RPM
 // the intake subsystem has a note ready
 // the arm is in position
+// look for the comment at the bottom!
 
 package frc.robot.commands.GamePieceCommands;
 
