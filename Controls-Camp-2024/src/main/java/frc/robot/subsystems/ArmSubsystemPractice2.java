@@ -2,7 +2,12 @@
 // set up!
 // If you don't like our variable names, feel free to reference the ones you used in the last problem!
 
-public class ArmSubsystem extends SubsystemBase {
+import com.revrobotics.AbsoluteEncoder;
+import com.revrobotics.CANSparkFlex;
+
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
+public class ArmSubsystemPractice2 extends SubsystemBase {
   private CANSparkFlex m_armMotor;
   private AbsoluteEncoder m_armEncoder;
   private double m_targetAngle;
@@ -10,7 +15,7 @@ public class ArmSubsystem extends SubsystemBase {
   private Debouncer m_armDebouncer;
   private Timer m_timer;
 
-  public ArmSubsystem() {
+  public ArmSubsystemPractice2() {
     m_armMotor = ; //Hint: your parameters are MotorIDs.Arm and MotorType.kBrushless
     m_armDebouncer = ; //Hint: your parameters are ArmConstants.DEBOUNCE_TIME and DebounceType.kRising
     m_targetAngle = ; //Pick a reasonable number please
@@ -18,5 +23,6 @@ public class ArmSubsystem extends SubsystemBase {
   }
 
   @Override
-  public void periodic() {}
+  public void periodic() {
+  }
 }

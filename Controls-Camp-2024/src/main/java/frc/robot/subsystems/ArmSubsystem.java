@@ -19,13 +19,10 @@ import edu.wpi.first.math.filter.Debouncer;
 import edu.wpi.first.math.filter.Debouncer.DebounceType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
-import frc.robot.Constants.ArmConstants;
-import frc.robot.Constants.MessageTimers;
 import frc.robot.Constants.MotorIDs;
-import frc.robot.Constants.LEDConstants.States;
 
 public class ArmSubsystem extends SubsystemBase {
-  private CANSparkFlex m_armMotor = new CANSparkFlex(MotorIDs.Arm, MotorType.kBrushless);
+  private CANSparkFlex m_armMotor = new CANSparkFlex(MotorIDs.ARM, MotorType.kBrushless);
   private AbsoluteEncoder m_armEncoder;
   private double m_targetAngle = 0.0;
   private boolean m_inPosition;
@@ -36,7 +33,6 @@ public class ArmSubsystem extends SubsystemBase {
   private Timer m_timer;
   private int m_armWrapCounter;
   TreeMap<Double, Double> m_mapOfP;
-  States commandState;
 
   public ArmSubsystem() {
     m_mapOfP = new TreeMap<Double, Double>();
