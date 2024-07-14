@@ -19,8 +19,10 @@ public class LEDDefaultCommand extends Command {
   public void initialize() {
   }
 
+  // Remember that it's coming from a different file so you'll need to access by doing m_LEDSubystem.method_name
   @Override
   public void execute() {
+    // This is where you'll put the methods you made in to run
   }
 
   @Override

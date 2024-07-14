@@ -1,3 +1,5 @@
+// For this practice problem we're just focusing on creating methods and running them with actual robot code
+
 package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.AddressableLED;
@@ -10,6 +12,7 @@ public class LEDSubsystem extends SubsystemBase {
     private AddressableLEDBuffer m_LEDBuffer;
     private int m_port;
 
+// This is the class constructor, you don't need to change anything in here  
     public LEDSubsystem(int p_port) {
         m_port = p_port;
         m_addressableLED = new AddressableLED(m_port);
@@ -25,9 +28,16 @@ public class LEDSubsystem extends SubsystemBase {
             m_LEDBuffer.setRGB(i, r, g, b);
         }
     }
-    
-    // Use the setToColor method to help you create the setToRed, setToBlue, and setToGreen methods
 
+
+    // Use the setToColor method to help you create the setToRed function
+    // The setToGreen and setToBlue should look very similar 
+    private void setToRed(){
+
+    }
+    
+
+// Don't worry about changing anything inside the periodic 
     public void periodic() {
         m_addressableLED.setData(m_LEDBuffer);
     }
