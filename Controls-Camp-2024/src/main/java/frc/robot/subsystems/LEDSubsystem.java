@@ -30,12 +30,13 @@ public class LEDSubsystem extends SubsystemBase {
     }
 
 
-    // Use the setToColor method to help you create the setToRed function
-    // The setToGreen and setToBlue should look very similar 
     private void setToRed(){
-
+    // Use the setToColor method to help you create the setToRed function
     }
-    
+
+// The setToGreen and setToBlue should look very similar  
+// Go ahead and create those methods 
+
 
 // Don't worry about changing anything inside the periodic 
     public void periodic() {
