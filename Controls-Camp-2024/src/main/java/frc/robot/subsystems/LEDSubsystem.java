@@ -2,14 +2,12 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj.AddressableLED;
 import edu.wpi.first.wpilibj.AddressableLEDBuffer;
-import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants.LEDConstants;
 
 public class LEDSubsystem extends SubsystemBase {
     private AddressableLED m_addressableLED;
     private AddressableLEDBuffer m_LEDBuffer;
-    private Timer timer = new Timer();
     private int m_port;
 
     public LEDSubsystem(int p_port) {
@@ -20,7 +18,6 @@ public class LEDSubsystem extends SubsystemBase {
         m_addressableLED.setData(m_LEDBuffer);
         m_addressableLED.start();
         setToOrange();
-        timer.start();
     }
 
     private void setToColor(int r, int g, int b) {
@@ -28,6 +25,8 @@ public class LEDSubsystem extends SubsystemBase {
             m_LEDBuffer.setRGB(i, r, g, b);
         }
     }
+    
+    // Use the setToColor method to help you create the setToRed, setToBlue, and setToGreen methods
 
     public void periodic() {
         m_addressableLED.setData(m_LEDBuffer);

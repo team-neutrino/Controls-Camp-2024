@@ -5,9 +5,7 @@
 package frc.robot.commands.GamePieceCommands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.ArmSubsystem;
 import frc.robot.subsystems.IntakeSubsystem;
-import frc.robot.subsystems.ShooterSubsystem;
 import frc.robot.util.SubsystemContainer;
 
 /**
@@ -18,8 +16,6 @@ import frc.robot.util.SubsystemContainer;
  */
 public abstract class GamePieceCommand extends Command {
   protected IntakeSubsystem m_intakeSubsystem;
-  protected ShooterSubsystem m_shooterSubsystem;
-  protected ArmSubsystem m_armSubsystem;
 
   public GamePieceCommand() {
     m_intakeSubsystem = SubsystemContainer.intakeSubsystem;
