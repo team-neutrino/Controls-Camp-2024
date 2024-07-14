@@ -55,7 +55,7 @@ public final class Constants {
     public static final Pose2d BLUE_TARGET_POSE1 = new Pose2d(2, 4, new Rotation2d());
     public static final Pose2d BLUE_TARGET_POSE2 = new Pose2d(0.1, 4.8, new Rotation2d());
     public static final Pose2d BLUE_TARGET_POSE3 = new Pose2d(2.1, 2.1, new Rotation2d());
-    // TODO: add target poses
+
     public static final Pose2d BLUE_TARGET_POSE4 = new Pose2d();
 
     public static final Pose2d RED_TARGET_POSE1 = new Pose2d();
@@ -144,7 +144,7 @@ public final class Constants {
     public static final double ARM_CM = 0.37084; // INCHES 14.6
     public static final int ARM_CURRENT_LIMIT = 80;
 
-    // TODO: FeedForward Constants are PLACEHOLDERS
+
     public static final double FF_ks = 0.0;
     public static final double FF_kv = 0.0;
     public static final double FF_ka = 0.0;
