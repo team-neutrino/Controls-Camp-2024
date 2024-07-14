@@ -15,14 +15,14 @@ public class LEDDefaultCommand extends Command {
     addRequirements(m_LEDSubsystem);
   }
 
+  // Remember that the methods are coming from a different file so you'll need to access by doing m_LEDSubystem.method_name
   @Override
   public void initialize() {
+    // Run each method one at a time, i.e. don't have both setToRed and setToGreen initialize at the same time. 
   }
 
-  // Remember that it's coming from a different file so you'll need to access by doing m_LEDSubystem.method_name
   @Override
   public void execute() {
-    // This is where you'll put the methods you made in to run
   }
 
   @Override
