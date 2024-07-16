@@ -40,6 +40,9 @@ public class LEDSubsystem extends SubsystemBase {
     // The setToGreen and setToBlue should look very similar   
     // Go ahead and create those methods 
 
+    // Step 6
+    // Create a method called setToOrange that sets the LEDs to orange
+    // It will look very similar to the other methods you previously made
 
     // Don't worry about changing anything inside the periodic 
     public void periodic() {
