@@ -2,6 +2,7 @@ package frc.robot.commands;
 
 import frc.robot.Constants;
 import frc.robot.Constants.LEDConstants.States;
+import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.LEDSubsystem;
 import frc.robot.util.SubsystemContainer;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -9,6 +10,7 @@ import edu.wpi.first.wpilibj2.command.Command;
 public class LEDDefaultCommand extends Command {
 
   private LEDSubsystem m_LEDSubsystem;
+  private IntakeSubsystem m_IntakeSubsystem;
 
   public LEDDefaultCommand(CommandXboxController p_controller) {
     m_LEDSubsystem = SubsystemContainer.LEDSubsystem;
@@ -25,8 +27,9 @@ public class LEDDefaultCommand extends Command {
   @Override
   public void execute() {
     // Step 7
-    // Use an if statement 
-    // To access the beam break 
+    // To access the beam break, you'll have to call m_intakeBeamBreak 
+    // from the Intake Subsystem file the same way you did for the setTo methods. 
+
   }
 
   @Override
