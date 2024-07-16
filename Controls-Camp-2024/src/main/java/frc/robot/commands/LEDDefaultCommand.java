@@ -6,13 +6,14 @@ import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.LEDSubsystem;
 import frc.robot.util.SubsystemContainer;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj.XboxController;
 
 public class LEDDefaultCommand extends Command {
 
   private LEDSubsystem m_LEDSubsystem;
   private IntakeSubsystem m_IntakeSubsystem;
 
-  public LEDDefaultCommand(CommandXboxController p_controller) {
+  public LEDDefaultCommand() {
     m_LEDSubsystem = SubsystemContainer.LEDSubsystem;
     addRequirements(m_LEDSubsystem);
   }

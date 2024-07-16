@@ -16,7 +16,7 @@ public class LEDSubsystem extends SubsystemBase {
     public LEDSubsystem(int p_port) {
         m_port = p_port;
         m_addressableLED = new AddressableLED(m_port);
-        m_LEDBuffer = new AddressableLEDBuffer();
+        m_LEDBuffer = new AddressableLEDBuffer(18);
         m_addressableLED.setLength(m_LEDBuffer.getLength());
         m_addressableLED.setData(m_LEDBuffer);
         m_addressableLED.start();
@@ -31,7 +31,7 @@ public class LEDSubsystem extends SubsystemBase {
     }
 
 
-    private void setToRed(){
+    public void setToRed(){
         // Step 3
         // Call the setToColor function with the correct parameters
     }
