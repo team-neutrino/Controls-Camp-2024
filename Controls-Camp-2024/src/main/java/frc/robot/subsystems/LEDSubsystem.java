@@ -29,6 +29,10 @@ public class LEDSubsystem extends SubsystemBase {
         }
     }
 
+    public void setToBlue() {
+        setToColor(0, 0, 255);
+    }
+
     public void setToRed() {
         // Step 3
         // Call the setToColor function with the correct parameters
@@ -41,6 +45,7 @@ public class LEDSubsystem extends SubsystemBase {
     // Step 6
     // Create a method called setToOrange that sets the LEDs to orange
     // It will look very similar to the other methods you previously made
+    // RGB values are
 
     // Don't worry about changing anything inside the periodic
     public void periodic() {

@@ -18,18 +18,21 @@ public class LEDDefaultCommand extends Command {
     addRequirements(m_LEDSubsystem);
   }
 
-  // Remember that the methods are coming from a different file so you'll need to access by doing m_LEDSubystem.method_name
+  // Remember that the methods are coming from a different file so you'll need to
+  // access by doing m_LEDSubystem.method_name
   @Override
   public void initialize() {
+    m_LEDSubsystem.setToBlue();
     // Step 4
-    // Run each method one at a time, i.e. don't have both setToRed and setToGreen initialize at the same time. 
+    // Run each method one at a time, i.e. don't have both setToRed and setToGreen
+    // initialize at the same time.
   }
 
   @Override
   public void execute() {
     // Step 7
-    // To access the beam break, you'll have to call m_intakeBeamBreak 
-    // from the Intake Subsystem file the same way you did for the setTo methods. 
+    // To access the beam break, you'll have to call m_intakeBeamBreak
+    // from the Intake Subsystem file the same way you did for the setTo methods.
 
   }
 
