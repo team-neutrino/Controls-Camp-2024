@@ -19,9 +19,6 @@ public abstract class GamePieceCommand extends Command {
 
   public GamePieceCommand() {
     m_intakeSubsystem = SubsystemContainer.intakeSubsystem;
-    m_shooterSubsystem = SubsystemContainer.shooterSubsystem;
-    m_armSubsystem = SubsystemContainer.armSubsystem;
-
-    addRequirements(m_intakeSubsystem, m_shooterSubsystem, m_armSubsystem);
+    addRequirements(m_intakeSubsystem);
   }
 }

@@ -12,7 +12,7 @@ public class LEDSubsystem extends SubsystemBase {
     private AddressableLEDBuffer m_LEDBuffer;
     private int m_port;
 
-    // This is the class constructor, you don't need to change anything in here  
+    // This is the class constructor, you don't need to change anything in here
     public LEDSubsystem(int p_port) {
         m_port = p_port;
         m_addressableLED = new AddressableLED(m_port);
@@ -20,31 +20,29 @@ public class LEDSubsystem extends SubsystemBase {
         m_addressableLED.setLength(m_LEDBuffer.getLength());
         m_addressableLED.setData(m_LEDBuffer);
         m_addressableLED.start();
-        setToOrange();
     }
 
-    // Use this method to help you create the other methods 
+    // Use this method to help you create the other methods
     private void setToColor(int r, int g, int b) {
         for (int i = 0; i < m_LEDBuffer.getLength(); i++) {
             m_LEDBuffer.setRGB(i, r, g, b);
         }
     }
 
-
-    public void setToRed(){
+    public void setToRed() {
         // Step 3
         // Call the setToColor function with the correct parameters
     }
 
-    // Step 3 cont. 
-    // The setToGreen and setToBlue should look very similar   
-    // Go ahead and create those methods 
+    // Step 3 cont.
+    // The setToGreen and setToBlue should look very similar
+    // Go ahead and create those methods
 
     // Step 6
     // Create a method called setToOrange that sets the LEDs to orange
     // It will look very similar to the other methods you previously made
 
-    // Don't worry about changing anything inside the periodic 
+    // Don't worry about changing anything inside the periodic
     public void periodic() {
         m_addressableLED.setData(m_LEDBuffer);
     }

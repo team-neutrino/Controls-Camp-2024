@@ -12,7 +12,6 @@ import frc.robot.util.SubsystemContainer;
 import edu.wpi.first.wpilibj.DataLogManager;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.InstantCommand;
-import edu.wpi.first.wpilibj2.command.SequentialCommandGroup;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 
 public class RobotContainer {
@@ -22,7 +21,7 @@ public class RobotContainer {
   CommandXboxController m_buttonsController = new CommandXboxController(OperatorConstants.XBOX_CONTROLLER);
   CommandXboxController m_driverController = new CommandXboxController(OperatorConstants.DRIVER_CONTROLLER);
 
-  LEDDefaultCommand m_LEDDefaultCommand = new LEDDefaultCommand(m_buttonsController);
+  LEDDefaultCommand m_LEDDefaultCommand = new LEDDefaultCommand();
   IntakeDefaultCommand m_intakeDefaultCommand = new IntakeDefaultCommand();
 
   public RobotContainer() {
