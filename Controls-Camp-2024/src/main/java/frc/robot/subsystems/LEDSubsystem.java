@@ -46,7 +46,7 @@ public class LEDSubsystem extends SubsystemBase {
     // Step 6
     // Create a method called setToOrange that sets the LEDs to orange
     // It will look very similar to the other methods you previously made
-    // RGB values are
+    // RGB values are 255 r, 165 b, 0 g
 
     // Don't worry about changing anything inside the periodic
     public void periodic() {
