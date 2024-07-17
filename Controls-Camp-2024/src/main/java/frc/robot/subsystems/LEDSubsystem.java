@@ -20,6 +20,7 @@ public class LEDSubsystem extends SubsystemBase {
         m_addressableLED.setLength(m_LEDBuffer.getLength());
         m_addressableLED.setData(m_LEDBuffer);
         m_addressableLED.start();
+        setToBlue();
     }
 
     // Use this method to help you create the other methods
