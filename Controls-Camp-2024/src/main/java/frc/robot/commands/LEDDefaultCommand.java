@@ -15,6 +15,7 @@ public class LEDDefaultCommand extends Command {
 
   public LEDDefaultCommand() {
     m_LEDSubsystem = SubsystemContainer.LEDSubsystem;
+    m_IntakeSubsystem = SubsystemContainer.intakeSubsystem;
     addRequirements(m_LEDSubsystem);
   }
 
