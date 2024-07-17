@@ -31,7 +31,7 @@ public class LEDDefaultCommand extends Command {
   @Override
   public void execute() {
     // Step 7
-    // To access the beam break, you'll have to call isBeamBrokenIntake() method 
+    // To access the beam break, you'll have to call isBeamBrokenIntake() method (already made)
     // from the Intake Subsystem file the same way you did for the setTo methods.
 
   }
