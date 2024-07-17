@@ -31,13 +31,13 @@ public class ShooterSubsystem extends SubsystemBase {
   //create a boolean member variable for whether or not you are at the target speed
 
   public ShooterSubsystem() {
-    m_shooterEncoder = m_shooterMotor.//Call a "get" method for the shooter encoder
-    m_pidController = m_shooterMotor.//Call a "get" method for the PID controller
-    m_pidController.setFeedbackDevice(); //Fill the parentheses with the member variable for the encoder
-    m_shooterMotor.setIdleMode(IdleMode.); //Set the idle mode of the shooter motor to "coast"
-    m_shooterMotor.setInverted(); //Fill the parentheses with a boolean to make the shooter motor NOT inverted.
+    //m_shooterEncoder = m_shooterMotor.//Call a "get" method for the shooter encoder
+    //m_pidController = m_shooterMotor.//Call a "get" method for the PID controller
+    //m_pidController.setFeedbackDevice(); //Fill the parentheses with the member variable for the encoder
+    //m_shooterMotor.setIdleMode(IdleMode.); //Set the idle mode of the shooter motor to "coast"
+    //m_shooterMotor.setInverted(); //Fill the parentheses with a boolean to make the shooter motor NOT inverted.
 
-    m_shooterMotor.burnFlash();
+    //m_shooterMotor.burnFlash();
   }
 
   public boolean approveShoot() {
@@ -68,13 +68,10 @@ public class ShooterSubsystem extends SubsystemBase {
 
   @Override
   public void periodic() {
-    if (m_shootControlType == ControlType.kVelocity) {
-      m_pidController.setReference(m_targetRPM, CANSparkBase.ControlType.kVelocity);
-    } else {
-      m_shooterMotor.setVoltage(m_targetVoltage);
-    }
+    //write an if statement that sets the reference of the pid controller to the target
+    //RPM (the second parameter is CANSparkBase.ControlType.kVelocity) if the shoot control type is ControlType.kVelocity
+    //Otherwise, you want to set the voltage of the shooter motor to your target voltage
 
-    m_atSpeed = m_shootDebouncer
-        .calculate(Math.abs(getTargetRPM() - getShooterRPM()) <= ShooterConstants.RPM_ERROR_THRESHOLD);
+    m_atSpeed = m_shootDebouncer.calculate(Math.abs(getTargetRPM() - getShooterRPM()) <= ShooterConstants.RPM_ERROR_THRESHOLD);
   }
 }

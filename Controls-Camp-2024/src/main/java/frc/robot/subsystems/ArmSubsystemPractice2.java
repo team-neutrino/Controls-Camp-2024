@@ -16,10 +16,10 @@ public class ArmSubsystemPractice2 extends SubsystemBase {
   private Timer m_timer;
 
   public ArmSubsystemPractice2() {
-    m_armMotor = ; //Hint: your parameters are MotorIDs.Arm and MotorType.kBrushless
-    m_armDebouncer = ; //Hint: your parameters are ArmConstants.DEBOUNCE_TIME and DebounceType.kRising
-    m_targetAngle = ; //Pick a reasonable number please
-    m_timer = ;
+    //m_armMotor = ; Hint: your parameters are MotorIDs.Arm and MotorType.kBrushless
+    //m_armDebouncer = ; Hint: your parameters are ArmConstants.DEBOUNCE_TIME and DebounceType.kRising
+    //m_targetAngle = ; Pick a reasonable number please
+    //m_timer = ;
   }
 
   @Override
