@@ -22,9 +22,8 @@ public class IntakeSubsystem extends SubsystemBase {
     private CANSparkMax m_indexMotor = new CANSparkMax(MotorIDs.INDEX_MOTOR, CANSparkLowLevel.MotorType.kBrushless);
     private DigitalInput m_intakeBeamBreak = new DigitalInput(DigitalConstants.INTAKE_MOTOR_BEAMBREAK);
 
-
     public IntakeSubsystem() {
-        
+
         m_intakeMotor.setIdleMode(IdleMode.kCoast);
         m_intakeMotor.burnFlash();
         m_indexMotor.burnFlash();
@@ -57,7 +56,6 @@ public class IntakeSubsystem extends SubsystemBase {
         }
     }
 
-
     public void stopIndex() {
         indexVoltage = 0;
     }
@@ -71,6 +69,11 @@ public class IntakeSubsystem extends SubsystemBase {
         m_indexMotor.set(indexVoltage);
         m_intakeMotor.set(intakeVoltage);
         m_intakeBeam = !m_intakeBeamBreak.get();
+    }
+
+    public boolean isNoteReady() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isNoteReady'");
     }
 
 }

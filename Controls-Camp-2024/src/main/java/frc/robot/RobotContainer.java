@@ -6,7 +6,6 @@ package frc.robot;
 
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.IntakeDefaultCommand;
-import frc.robot.commands.LEDDefaultCommand;
 import frc.robot.commands.ShooterDefaultCommand;
 import frc.robot.util.SubsystemContainer;
 import edu.wpi.first.wpilibj.DataLogManager;
@@ -22,7 +21,6 @@ public class RobotContainer {
   CommandXboxController m_buttonsController = new CommandXboxController(OperatorConstants.XBOX_CONTROLLER);
   CommandXboxController m_driverController = new CommandXboxController(OperatorConstants.DRIVER_CONTROLLER);
 
-  LEDDefaultCommand m_LEDDefaultCommand = new LEDDefaultCommand(m_buttonsController);
   IntakeDefaultCommand m_intakeDefaultCommand = new IntakeDefaultCommand();
 
   public RobotContainer() {
@@ -35,7 +33,6 @@ public class RobotContainer {
 
   private void configureBindings() {
     // set default commands
-    SubsystemContainer.LEDSubsystem.setDefaultCommand(m_LEDDefaultCommand);
     SubsystemContainer.intakeSubsystem.setDefaultCommand(m_intakeDefaultCommand);
     SubsystemContainer.shooterSubsystem.setDefaultCommand(new ShooterDefaultCommand());
 

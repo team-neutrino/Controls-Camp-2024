@@ -1,17 +1,25 @@
-package frc.robot.commands.GamePieceCommands;
+package frc.robot.commands;
 
+import edu.wpi.first.wpilibj2.command.CommandBase;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.subsystems.ArmSubsystem;
+import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 
-public class ShootManualCommand extends GamePieceCommand {
+public class ShootCommandPractice1Key extends CommandBase {
     private double m_angle;
     private double m_rpm;
     private double m_thresholdrpm;
     private CommandXboxController m_Controller;
+    private ArmSubsystem m_armSubsystem;
+    private ShooterSubsystem m_shooterSubsystem;
+    private IntakeSubsystem m_intakeSubsystem;
 
-    public ShootManualCommand(double p_angle, double p_rpm, double p_thresholdrpm) {
+    public ShootCommandPractice1Key(double p_angle, double p_rpm, double p_thresholdrpm) {
         m_angle = p_angle;
         m_rpm = p_rpm;
         m_thresholdrpm = p_thresholdrpm;
+        m_armSubsystem = new ArmSubsystem();
     }
 
     public void initialize() {
@@ -22,7 +30,6 @@ public class ShootManualCommand extends GamePieceCommand {
     public void execute() {
         m_armSubsystem.setArmReferenceAngle(m_angle);
         m_shooterSubsystem.setTargetRPM(m_rpm);
-        m_intakeSubsystem.runIndexFeed();
     }
 
     @Override
