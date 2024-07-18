@@ -66,4 +66,28 @@ public final class Constants {
     public static final double MAX_SHOOTING_DISTANCE = 5;
   }
 
+  public final class ArmConstants {
+    public static final double Arm_kp = 0.022;
+    public static final double Arm_ki = 0.0;
+    public static final double Arm_kd = 0.0;
+    public static final double ClimbArm_kp = Arm_kp;
+    public static final double ClimbArm_ki = .0001;
+    public static final double ClimbArm_kd = 0.0;
+    public static final double ClimbIZone = 30;
+    public static final double FastArm_kp = 0.05;
+
+    public static final double timeBeforeSwitchPID = 0.3;
+
+    public static final double FF_kg = 0.007;
+    public static final double ARM_MASS_KG = 8.3733; // LBS 18.46
+    public static final double ARM_ABS_ENCODER_ZERO_OFFSET = 279;
+    public static final double ARM_RADIUS = 0.6555;
+    public static final double ARM_CM = 0.37084; // INCHES 14.6
+    public static final double INTAKE_POSE = -25;
+    public static final int ARM_CURRENT_LIMIT = 80;
+    public static final double DEBOUNCE_TIME = 1;
+    public static final double CLIMB_ANGLE = 0;
+    public static final double POSITION_ERROR_THRESHOLD = 0;
+  }
+
 }

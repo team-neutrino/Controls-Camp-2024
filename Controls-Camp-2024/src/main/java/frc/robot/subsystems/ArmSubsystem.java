@@ -19,6 +19,7 @@ import edu.wpi.first.math.filter.Debouncer;
 import edu.wpi.first.math.filter.Debouncer.DebounceType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
+import frc.robot.Constants.ArmConstants;
 import frc.robot.Constants.MotorIDs;
 
 public class ArmSubsystem extends SubsystemBase {
@@ -82,29 +83,11 @@ public class ArmSubsystem extends SubsystemBase {
     return m_inPosition;
   }
 
-  public double limitArmAngle(double angle) {
-    if (angle > ArmConstants.ARM_UPPER_LIMIT) {
-      return ArmConstants.ARM_UPPER_LIMIT;
-    } else if (angle < ArmConstants.ARM_LOWER_LIMIT) {
-      return ArmConstants.ARM_LOWER_LIMIT;
-    } else if (Double.isNaN(angle)) {
-      return ArmConstants.INTAKE_POSE;
-    }
-    return angle;
-  }
-
   public void initializeMotorControllers() {
     m_armMotor.setIdleMode(IdleMode.kBrake);
     m_armEncoder = m_armMotor.getAbsoluteEncoder(SparkAbsoluteEncoder.Type.kDutyCycle);
     m_armEncoder.setPositionConversionFactor(360);
     m_armEncoder.setZeroOffset(ArmConstants.ARM_ABS_ENCODER_ZERO_OFFSET);
-    m_armMotor.setPeriodicFramePeriod(CANSparkLowLevel.PeriodicFrame.kStatus0, MessageTimers.Status0);
-    m_armMotor.setPeriodicFramePeriod(CANSparkLowLevel.PeriodicFrame.kStatus1, MessageTimers.Status1);
-    m_armMotor.setPeriodicFramePeriod(CANSparkLowLevel.PeriodicFrame.kStatus2, MessageTimers.Status2);
-    m_armMotor.setPeriodicFramePeriod(CANSparkLowLevel.PeriodicFrame.kStatus3, MessageTimers.Status3);
-    m_armMotor.setPeriodicFramePeriod(CANSparkLowLevel.PeriodicFrame.kStatus4, MessageTimers.Status4);
-    m_armMotor.setPeriodicFramePeriod(CANSparkLowLevel.PeriodicFrame.kStatus5, 17);
-    m_armMotor.setPeriodicFramePeriod(CANSparkLowLevel.PeriodicFrame.kStatus6, MessageTimers.Status6);
     m_armMotor.setSmartCurrentLimit(ArmConstants.ARM_CURRENT_LIMIT);
 
     m_pidController = m_armMotor.getPIDController();
@@ -141,8 +124,6 @@ public class ArmSubsystem extends SubsystemBase {
 
   // in degrees. converted to (0, 360)
   private void updateArmAngle(double targetAngle, int PIDslot) {
-
-    targetAngle = limitArmAngle(targetAngle);
     targetAngle = adjustAngleIn(targetAngle);
     m_pidController.setReference(targetAngle, CANSparkBase.ControlType.kPosition, PIDslot, feedForwardCalculation());
   }
@@ -158,14 +139,6 @@ public class ArmSubsystem extends SubsystemBase {
 
   public void commandStart() {
     m_timer.restart();
-  }
-
-  public States getCommandState() {
-    return commandState;
-  }
-
-  public void setCommandState(States state) {
-    commandState = state;
   }
 
   private void pidChanger() {

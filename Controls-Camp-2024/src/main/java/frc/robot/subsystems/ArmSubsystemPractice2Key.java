@@ -1,3 +1,5 @@
+package frc.robot.subsystems;
+
 import com.revrobotics.AbsoluteEncoder;
 import com.revrobotics.CANSparkFlex;
 import com.revrobotics.CANSparkLowLevel.MotorType;
@@ -6,6 +8,7 @@ import edu.wpi.first.math.filter.Debouncer;
 import edu.wpi.first.math.filter.Debouncer.DebounceType;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import frc.robot.Constants;
 import frc.robot.Constants.MotorIDs;
 
 public class ArmSubsystemPractice2Key extends SubsystemBase {
@@ -18,7 +21,7 @@ public class ArmSubsystemPractice2Key extends SubsystemBase {
 
   public ArmSubsystemPractice2Key() {
     m_armMotor = new CANSparkFlex(MotorIDs.ARM, MotorType.kBrushless);
-    m_armDebouncer = new Debouncer(ArmConstants.DEBOUNCE_TIME, DebounceType.kRising);
+    m_armDebouncer = new Debouncer(Constants.ArmConstants.DEBOUNCE_TIME, DebounceType.kRising);
     m_targetAngle = Constants.ArmConstants.INTAKE_POSE;
     m_timer = new Timer();
   }
