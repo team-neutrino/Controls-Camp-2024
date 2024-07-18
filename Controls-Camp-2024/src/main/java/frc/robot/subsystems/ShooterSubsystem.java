@@ -44,7 +44,7 @@ public class ShooterSubsystem extends SubsystemBase {
     // m_shooterMotor.setInverted(); //Fill the parentheses with a boolean to make
     // the shooter motor NOT inverted.
 
-    // m_shooterMotor.burnFlash();
+    // call the method burnFlash() from the shooter motor (don't worry about it)
   }
 
   public boolean approveShoot() {
