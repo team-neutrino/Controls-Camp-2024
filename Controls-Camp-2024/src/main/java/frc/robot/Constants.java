@@ -4,7 +4,6 @@ public final class Constants {
 
   public final class DigitalConstants {
     public static final int INTAKE_MOTOR_BEAMBREAK = 0;
-    public static final int INDEX_MOTOR_BEAMBREAK = 1;
   }
 
   public final class MotorIDs {

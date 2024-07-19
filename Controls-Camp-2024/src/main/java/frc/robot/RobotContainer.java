@@ -10,16 +10,24 @@ import frc.robot.commands.LEDefaultCommand;
 import frc.robot.subsystems.IntakeSubsystem;
 import frc.robot.subsystems.LEDSubsystem;
 
+/**
+ * Robot container, stores all systems and commands for use
+ */
 public class RobotContainer {
-
+  /**
+   * Instance variables
+   */
   CommandXboxController m_buttonsController = new CommandXboxController(0);
 
-  IntakeDefaultCommand m_intakeDefaultCommand;
-  IntakeSubsystem m_intakeSubsystem;
+  private IntakeDefaultCommand m_intakeDefaultCommand;
+  private IntakeSubsystem m_intakeSubsystem;
 
-  LEDSubsystem m_LEDSubsystem;
-  LEDefaultcommand m_LEDefaultCommand;
+  private LEDSubsystem m_LEDSubsystem;
+  private LEDefaultcommand m_LEDefaultCommand;
 
+  /**
+   * Constructor
+   */
   public RobotContainer() {
     m_intakeDefaultCommand = new IntakeDefaultCommand();
     m_intakeSubsystem = new IntakeSubsystem();
@@ -30,6 +38,10 @@ public class RobotContainer {
     configureBindings();
   }
 
+  /**
+   * This method is called by the constructor, it sets all of our commands to
+   * buttons
+   */
   private void configureBindings() {
     m_intakeSubsystem.setDefaultCommand(m_intakeDefaultCommand);
     m_LEDSubsystem.setDefaultCommand(m_LEDefaultCommand);
