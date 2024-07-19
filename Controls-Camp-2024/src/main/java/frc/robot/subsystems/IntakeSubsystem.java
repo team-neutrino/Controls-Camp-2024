@@ -15,6 +15,13 @@ import com.revrobotics.CANSparkBase.IdleMode;
 import com.revrobotics.CANSparkLowLevel;
 
 public class IntakeSubsystem extends SubsystemBase {
+
+    /**
+     * Here is one of the four motors you will need to run the intake, all our
+     * motors are brushless
+     */
+    private CANSparkMax m_motor1 = new CANSparkMax(MotorIDs.INDEX_MOTOR, CANSparkMax.MotorType.kBrushless);
+
     /** Creates a new IntakeSubsystem. */
     public IntakeSubsystem() {
     }
