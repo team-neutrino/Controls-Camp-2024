@@ -7,6 +7,7 @@ package frc.robot;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import frc.robot.commands.IntakeDefaultCommand;
 import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.LEDSubsystem;
 
 public class RobotContainer {
 
@@ -15,9 +16,13 @@ public class RobotContainer {
   IntakeDefaultCommand m_intakeDefaultCommand;
   IntakeSubsystem m_intakeSubsystem;
 
+  LEDSubsystem m_LEDSubsystem;
+
   public RobotContainer() {
     m_intakeDefaultCommand = new IntakeDefaultCommand();
     m_intakeSubsystem = new IntakeSubsystem();
+
+    m_LEDSubsystem = new LEDSubsystem(0);
 
     configureBindings();
   }
