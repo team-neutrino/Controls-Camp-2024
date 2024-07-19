@@ -10,12 +10,12 @@ import frc.robot.Constants.DigitalConstants;
 import frc.robot.Constants.IntakeConstants;
 
 public class IntakeSubsystem extends SubsystemBase {
-  /** Creates a new IntakeSubsystem. */
-  public IntakeSubsystem() {
-  }
+    /** Creates a new IntakeSubsystem. */
+    public IntakeSubsystem() {
+    }
 
-  @Override
-  public void periodic() {
-    // This method will be called once per scheduler run
-  }
+    @Override
+    public void periodic() {
+        // This method will be called once per scheduler run
+    }
 }
