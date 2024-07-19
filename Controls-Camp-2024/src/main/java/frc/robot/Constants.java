@@ -19,4 +19,8 @@ public final class Constants {
     public static final double INDEX_MOTOR_VOLTAGE_INTAKE = .4;
     public static final double INDEX_MOTOR_VOLTAGE_POSITION = 0.07;
   }
+
+  public final class LEDConstants {
+    public static final int LEDBufferLen = 140;
+  }
 }
