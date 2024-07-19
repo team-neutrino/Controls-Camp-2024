@@ -16,7 +16,6 @@ public final class Constants {
   public final class IntakeConstants {
     public static final double INTAKE_MOTOR_VOLTAGE = 1;
     public static final double INDEX_MOTOR_VOLTAGE_INTAKE = .4;
-    public static final double INDEX_MOTOR_VOLTAGE_POSITION = 0.07;
   }
 
   public final class LEDConstants {
