@@ -1,6 +1,7 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.Constants.ShooterConstants;
 import frc.robot.subsystems.ShooterSubsystem;
 import frc.robot.util.SubsystemContainer;
 
@@ -18,7 +19,7 @@ public class ShooterDefaultCommand extends Command {
     @Override
     public void execute() {
         // m_shooterSubsystem.defaultShooter();
-        m_shooterSubsystem.setVoltage(0.4);
+        m_shooterSubsystem.setVoltage(ShooterConstants.SHOOTER_MOTOR_VOLTAGE_TEST);
     }
 
     @Override

@@ -66,6 +66,7 @@ public final class Constants {
     public static final double RPM_ERROR_THRESHOLD = 200;
     public static final double AUTO_ALIGN_ERROR = 4;
     public static final double MAX_SHOOTING_DISTANCE = 5;
+    public static final double SHOOTER_MOTOR_VOLTAGE_TEST = 0.4;
   }
 
 }
