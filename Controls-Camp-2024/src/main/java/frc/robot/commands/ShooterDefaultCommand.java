@@ -18,6 +18,7 @@ public class ShooterDefaultCommand extends Command {
     @Override
     public void execute() {
         // m_shooterSubsystem.defaultShooter();
+        m_shooterSubsystem.setVoltage(0.4);
     }
 
     @Override

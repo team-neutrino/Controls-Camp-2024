@@ -36,8 +36,6 @@ public class ShooterSubsystem extends SubsystemBase {
     m_pidController.setFeedbackDevice(m_shooterEncoder);
     m_shooterMotor.setIdleMode(IdleMode.kCoast);
     m_shooterMotor.setInverted(false);
-
-
     m_shooterMotor.burnFlash();
   }
 
