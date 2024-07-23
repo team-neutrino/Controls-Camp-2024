@@ -6,9 +6,11 @@ import frc.robot.util.SubsystemContainer;
 
 public class IntakeDefaultCommand extends Command {
     IntakeSubsystem m_intakeSubsystem;
+    LEDSubsystem m_LEDSubsystem;
 
     public IntakeDefaultCommand() {
         m_intakeSubsystem = SubsystemContainer.intakeSubsystem;
+        m_LEDSubsystem = SubsystemContainer.LEDSubsystem;
         addRequirements(m_intakeSubsystem);
     }
 
@@ -18,7 +20,8 @@ public class IntakeDefaultCommand extends Command {
 
     @Override
     public void execute() {
-        if(m_intakeSubsystem.isBeamBrokenIntake()){
+        if(m_LEDSubsystem.isLEDYellow()){
+            wait(1000);
             m_intakeSubsystem.runIntake();
             m_intakeSubsystem.runIndexFeed(); 
         }

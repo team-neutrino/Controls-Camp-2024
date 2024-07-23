@@ -33,7 +33,9 @@ public class LEDDefaultCommand extends Command {
     m_LEDSubsystem.setToRed();
   }
   else {
-    m_LEDSubsystem.setToBlue();
+    m_LEDSubsystem.setToYellow();
+    wait(1000);
+    m_LEDSubsystem.setToGreen();
   }
   }
 
