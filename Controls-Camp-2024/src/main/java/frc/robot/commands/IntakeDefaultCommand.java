@@ -19,7 +19,7 @@ public class IntakeDefaultCommand extends Command {
     @Override
     public void execute() {
             m_intakeSubsystem.runIntake();
-
+            m_intakeSubsystem.runIndexFeed();
     }
 
     @Override
