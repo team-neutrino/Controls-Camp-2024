@@ -29,7 +29,12 @@ public class LEDDefaultCommand extends Command {
 
   @Override
   public void initialize() {
-    m_LEDSubsystem.setToOrange();
+  if(m_intakeSubsystem.isBeamBrokenIntake()){
+    m_LEDSubsystem.setToRed();
+  }
+  else {
+    m_LEDSubsystem.setToBlue();
+  }
   }
 
   @Override

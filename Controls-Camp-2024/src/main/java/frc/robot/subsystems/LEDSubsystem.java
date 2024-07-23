@@ -20,7 +20,6 @@ public class LEDSubsystem extends SubsystemBase {
         m_addressableLED.setData(m_LEDBuffer);
         m_addressableLED.start();
         setToOrange();
-        timer.start();
     }
 
     private void setToColor(int r, int g, int b) {
