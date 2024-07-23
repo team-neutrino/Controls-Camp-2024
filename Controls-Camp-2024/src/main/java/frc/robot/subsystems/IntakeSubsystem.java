@@ -52,15 +52,8 @@ public class IntakeSubsystem extends SubsystemBase {
     }
 
     public void runIntake() {
-        if (isBeamBrokenIntake()) {
-            stopIntake();
-            runIndexShoot();
-        } else {
-
             intakeVoltage = IntakeConstants.INTAKE_MOTOR_VOLTAGE;
-        }
     }
-
 
     public void stopIndex() {
         indexVoltage = 0;

@@ -18,8 +18,14 @@ public class IntakeDefaultCommand extends Command {
 
     @Override
     public void execute() {
+        if(m_intakeSubsystem.isBeamBrokenIntake()){
             m_intakeSubsystem.runIntake();
-            m_intakeSubsystem.runIndexFeed();
+            m_intakeSubsystem.runIndexFeed(); 
+        }
+        else{
+            m_intakeSubsystem.stopIntake();
+            m_intakeSubsystem.stopIndex();
+        }
     }
 
     @Override
