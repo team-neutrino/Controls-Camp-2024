@@ -58,7 +58,7 @@ public class LEDSubsystem extends SubsystemBase {
     public void setToPurple() {
         setToColor(255, 0, 255);
         isYellow = false;
-    }
+    }       
 
     public void setToCyan() {
         setToColor(0, 255, 255);
