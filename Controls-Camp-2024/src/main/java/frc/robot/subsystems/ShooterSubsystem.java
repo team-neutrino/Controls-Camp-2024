@@ -7,16 +7,11 @@ import com.revrobotics.SparkPIDController;
 import com.revrobotics.CANSparkBase;
 import com.revrobotics.CANSparkBase.ControlType;
 import com.revrobotics.CANSparkBase.IdleMode;
-import com.revrobotics.CANSparkLowLevel;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
-import frc.robot.Constants;
 import frc.robot.Constants.MotorIDs;
 import frc.robot.Constants.ShooterConstants;
-import frc.robot.Constants.ShooterSpeeds;
-import frc.robot.util.SubsystemContainer;
 import edu.wpi.first.math.filter.Debouncer;
-import edu.wpi.first.math.filter.Debouncer.DebounceType;
 
 public class ShooterSubsystem extends SubsystemBase {
   private CANSparkMax m_shooterMotor = new CANSparkMax(MotorIDs.SHOOTER_MOTOR, MotorType.kBrushless);
@@ -40,7 +35,8 @@ public class ShooterSubsystem extends SubsystemBase {
   }
 
   // public void defaultShooter() {
-  //   setVoltage(SubsystemContainer.intakeSubsystem.() ? ShooterSpeeds.INITIAL_SHOOTER_SPEED : 0.0);
+  // setVoltage(SubsystemContainer.intakeSubsystem.() ?
+  // ShooterSpeeds.INITIAL_SHOOTER_SPEED : 0.0);
   // }
 
   public boolean approveShoot() {
