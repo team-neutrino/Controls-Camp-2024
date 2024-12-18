@@ -7,10 +7,14 @@ package frc.robot;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
+import frc.robot.commands.IntakeDefaultCommand;
+import frc.robot.commands.IntakeRunCommand;
+import frc.robot.commands.ReverseIntakeRunCommand;
 import frc.robot.commands.ShooterNoShoot;
 import frc.robot.commands.ShooterShootsPewPew;
 import frc.robot.subsystems.ExampleSubsystem;
-import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.IntakeSubsystem;
+import frc.robot.subsystems.ShooterSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
@@ -26,7 +30,8 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
  */
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
-  private final Shooter m_shooter = new Shooter();
+  private final ShooterSubsystem m_shooter = new ShooterSubsystem();
+  private final IntakeSubsystem m_intake = new IntakeSubsystem();
 
   private final ExampleSubsystem m_exampleSubsystem = new ExampleSubsystem();
 
@@ -61,12 +66,15 @@ public class RobotContainer {
     new Trigger(m_exampleSubsystem::exampleCondition)
         .onTrue(new ExampleCommand(m_exampleSubsystem));
     m_shooter.setDefaultCommand(new ShooterNoShoot(m_shooter));
+    m_intake.setDefaultCommand(new IntakeDefaultCommand(m_intake));
 
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is
     // pressed,
     // cancelling on release.
     m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
     m_driverController.a().whileTrue(new ShooterShootsPewPew(m_shooter));
+    m_driverController.leftTrigger().whileTrue(new IntakeRunCommand(m_intake));
+    m_driverController.leftBumper().whileTrue(new ReverseIntakeRunCommand(m_intake));
   }
 
   /**

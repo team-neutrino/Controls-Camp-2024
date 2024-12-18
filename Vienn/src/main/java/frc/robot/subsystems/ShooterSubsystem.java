@@ -11,19 +11,22 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.commands.ShooterNoShoot;
 import frc.robot.commands.ShooterShootsPewPew;
 
-public class Shooter extends SubsystemBase {
+public class ShooterSubsystem extends SubsystemBase {
   /** Creates a new SH. */
-  CANSparkMax m_motor = new CANSparkMax(30, MotorType.kBrushless);
+  CANSparkMax m_shooter0 = new CANSparkMax(30, MotorType.kBrushless);
+  CANSparkMax m_shooter1 = new CANSparkMax(31, MotorType.kBrushless);
 
-  public Shooter() {
+  public ShooterSubsystem() {
   }
 
-  public void StopMoter() {
-    m_motor.stopMotor();
+  public void StopMotor() {
+    m_shooter0.stopMotor();
+    m_shooter1.stopMotor();
   }
 
-  public void SpinMoter() {
-    m_motor.set(0.5);
+  public void SpinMotor() {
+    m_shooter0.set(0.5);
+    m_shooter1.set(0.5);
   }
 
   @Override

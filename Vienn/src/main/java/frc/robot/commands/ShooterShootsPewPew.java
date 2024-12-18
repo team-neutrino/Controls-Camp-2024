@@ -5,13 +5,13 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj2.command.Command;
-import frc.robot.subsystems.Shooter;
+import frc.robot.subsystems.ShooterSubsystem;
 
 public class ShooterShootsPewPew extends Command {
   /** Creates a new Shootershootspewpew. */
-  private Shooter m_shooter;
+  private ShooterSubsystem m_shooter;
 
-  public ShooterShootsPewPew(Shooter p_shooter) {
+  public ShooterShootsPewPew(ShooterSubsystem p_shooter) {
     // Use addRequirements() here to declare subsystem dependencies.
     m_shooter = p_shooter;
     addRequirements(m_shooter);
@@ -25,7 +25,7 @@ public class ShooterShootsPewPew extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_shooter.SpinMoter();
+    m_shooter.SpinMotor();
   }
 
   // Called once the command ends or is interrupted.
